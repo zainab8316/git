@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(1, 1, 80);
+    font-family: sans-serif;
+}
+
+/* .nav{
+    background-color: blue;
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: absolute;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    transition:  0.4s ease;
+} */
+/*  li{
+    
+}
+
+nav{
+    padding: 2rem;
+    display: flex;
+    background-color: cadetblue;
+} */
+#menu{
+    cursor: pointer;
+    height: 35px;
+    width: 40px;
+    margin:30px 0 20px 20px ;
+    position: relative;
+    z-index: 100;
+}
+
+.bar{
+    height: 5px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    border-radius: 20px;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%,-50%); */
+    transition: 0.4s ease;
+}
+#bar1{
+    transform: translateY(-4px);
+}
+#bar3{
+    transform: translateY(4px);
+}
+
+.nav{
+    padding: 0;
+    margin: 0 20px;
+    transition: 1s ease;
+    display: none;
+}
+.nav li{
+    list-style: none;
+    padding: 15px 0;
+}
+
+.nav li a{
+    color: #fff;
+    text-decoration: none;
+}
+.nav li a:hover{
+    border: 1px solid white;
+    padding: 4px;
+    background-color: #fff;
+    color:rgb(84, 84, 2) ;
+    font-weight: 400;
+    border-radius: 2px;
+}
+
+/* icon bar after working in js  */
+
+.icon .bar{
+    background-color: #fff;
+}
+.icon #bar1{
+    transform: translateY(4px) rotate(-45deg);
+}
+.icon #bar3{
+    transform: translateY(-4px) rotate(45deg);
+}
+.icon #bar2{
+    opacity: 0;
+}
+
+/*  */
+
+.change{
+    background-color: rgb(84, 84, 2);
+    height: 100vh;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    font-size: 15px;
+    top: 0;
+    z-index: -100;
+    transition: all 1s ease;
+}
+@media screen and (max-width:1000px ) and (min-width:500px) {
+    .change{
+        background-color: red;
+        width: 40%;
+    }
+}
+@media screen and (max-width:500px ) and (min-width:0px) {
+    .change{
+        background-color: red;
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+    <div id="navigation">
+        
+        <div id="menu" onclick="onclickMenu()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+        <ul class="nav" >
+            <li><a href="#">Home</a></li> 
+            <li><a href="#">Blog</a></li> 
+            <li><a href="#">Services</a></li> 
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</body>
+<script >
+    function onclickMenu(){
+    document.querySelector("#menu").classList.toggle("icon")
+    document.querySelector(".nav").classList.toggle("change")
+}
+</script>
+
+</html>
